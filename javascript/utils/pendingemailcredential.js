@@ -75,7 +75,7 @@ firebaseui.auth.PendingEmailCredential = class {
 firebaseui.auth.PendingEmailCredential.fromPlainObject = function(response) {
   if (response && response['email']) {
     var credentialObject = response['credential'] &&
-        firebase.auth.AuthCredential['fromJSON'](response['credential']);
+        firebase.auth.OAuthCredential['fromJSON'](response['credential']);
     return new firebaseui.auth.PendingEmailCredential(
         /** @type {string} */ (response['email']), credentialObject);
   }
